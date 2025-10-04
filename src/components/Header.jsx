@@ -38,12 +38,9 @@ function Header() {
                 </a>
               </li>
               <li>
-                <Link
-                  to={"/#works"}
-                  className="hover:text-gray-200 font-medium"
-                >
+                <a href="#works" className="hover:text-gray-200 font-medium">
                   HOW IT WORKS
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to={"/dash"} className="hover:text-gray-200 font-medium">
