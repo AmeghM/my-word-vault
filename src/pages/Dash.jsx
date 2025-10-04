@@ -16,7 +16,18 @@ function Dash() {
       window.location.href = "/login";
       return null;
     }
+    // demo data
+    // const demoData = [
+    //   {
+    //     word: "Elegant",
+    //     definition: "Graceful and stylish in appearance or manner",
+    //     example: "He wore an elegant dress",
+    //     stat: "New",
+    //     notes: "Often used to describe style,design or behavior",
+    //   },
+    // ];
     const savedWords = JSON.parse(localStorage.getItem("words")) || [];
+
     setWords(savedWords);
   }, []);
 

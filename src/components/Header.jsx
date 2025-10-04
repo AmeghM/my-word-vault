@@ -86,20 +86,14 @@ function Header() {
             <a href="#works" className="block hover:text-gray-200">
               HOW IT WORKS
             </a>
-            <a href="#about" className="block hover:text-gray-200">
-              ABOUT
-            </a>
+            <Link to={"/dash"} className="hover:text-gray-200 font-medium">
+              DASH
+            </Link>
             {isLoggedIn ? (
               <>
-                <Link
-                  to="/dash"
-                  className="block px-4 py-2 rounded-md text-center hover:bg-[#059669]"
-                >
-                  Dashboard
-                </Link>
                 <button
                   onClick={logout}
-                  className="block px-4 py-2 border-2 border-white rounded-md w-full hover:bg-white hover:text-[#047857]"
+                  className="block px-4 py-2 border-2 border-white rounded-md w-full hover:bg-white hover:text-[#047857] mt-5"
                 >
                   Logout
                 </button>
@@ -107,7 +101,7 @@ function Header() {
             ) : (
               <Link
                 to="/login"
-                className="block px-4 py-2 border-2 border-green-400 rounded-md text-center hover:bg-[#059669]"
+                className="block px-4 py-2 border-2 border-green-400 rounded-md text-center hover:bg-[#059669] mt-5"
               >
                 Login
               </Link>
