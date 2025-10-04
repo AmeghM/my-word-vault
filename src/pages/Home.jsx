@@ -15,7 +15,7 @@ function Home() {
           </span>{" "}
           at a time.
         </h1>
-        <p className="text-sm sm:text-md font-medium text-gray-500 max-w-5 sm:max-w-3xl pb-2">
+        <p className="text-sm sm:text-base md:text-lg font-medium text-gray-500 max-w-md sm:max-w-lg md:max-w-2xl mx-auto pb-2">
           A personal space to collect, save, and master new words. Whether
           you’re preparing for exams, improving communication, or just love
           learning, we make it simple to grow your vocabulary every day
