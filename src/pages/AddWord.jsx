@@ -52,22 +52,18 @@ function AddWord() {
   return (
     <section>
       <div className="flex items-center flex-col justify-center p-8 rounded-lg shadow-lg w-full max-w-[100%]">
-        <Box
-          component="form"
-          sx={{ "& > :not(style)": { m: 1, width: "60ch" } }}
-        >
+        <div className="w-full max-w-[60ch] mx-auto mb-4">
           <TextField
+            fullWidth
             label="Add the word"
             color="success"
             value={word}
             onChange={(e) => setWord(e.target.value)}
           />
-        </Box>
-        <Box
-          component="form"
-          sx={{ "& > :not(style)": { m: 1, width: "60ch" } }}
-        >
+        </div>
+        <div className="w-full max-w-[60ch] mx-auto mb-4">
           <TextField
+            fullWidth
             label="Definition"
             color="success"
             multiline
@@ -75,12 +71,10 @@ function AddWord() {
             value={definition}
             onChange={(e) => setDefinition(e.target.value)}
           />
-        </Box>
-        <Box
-          component="form"
-          sx={{ "& > :not(style)": { m: 1, width: "60ch" } }}
-        >
+        </div>
+        <div className="w-full max-w-[60ch] mx-auto mb-4">
           <TextField
+            fullWidth
             label="Example"
             color="success"
             multiline
@@ -88,12 +82,10 @@ function AddWord() {
             value={example}
             onChange={(e) => setExample(e.target.value)}
           />
-        </Box>
-        <Box
-          component="form"
-          sx={{ "& .MuiTextField-root": { m: 1, width: "60ch" } }}
-        >
+        </div>
+        <div className="w-full max-w-[60ch] mx-auto mb-4">
           <TextField
+            fullWidth
             select
             label="Select"
             value={stat}
@@ -106,12 +98,10 @@ function AddWord() {
               </MenuItem>
             ))}
           </TextField>
-        </Box>
-        <Box
-          component="form"
-          sx={{ "& > :not(style)": { m: 1, width: "60ch" } }}
-        >
+        </div>
+        <div className="w-full max-w-[60ch] mx-auto mb-4">
           <TextField
+            fullWidth
             label="Notes (optional)"
             color="success"
             multiline
@@ -119,15 +109,15 @@ function AddWord() {
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
           />
-        </Box>
+        </div>
         <button
-          className="bg-green-400 w-[60ch] px-6 py-2 rounded-lg cursor-pointer mt-3"
+          className="bg-green-400 w-full sm:w-[40ch] md:w-[50ch] lg:w-[60ch] px-6 py-2 rounded-lg cursor-pointer shadow hover:bg-green-500 hover:text-white"
           onClick={addWord}
         >
           ADD
         </button>
         <button
-          className="bg-green-400 w-[60ch] px-6 py-2 rounded-lg cursor-pointer mt-3"
+          className="bg-red-400 w-full sm:w-[40ch] md:w-[50ch] lg:w-[60ch] px-6 py-2 rounded-lg cursor-pointer shadow hover:bg-red-500 hover:text-white mt-4"
           onClick={clearInput}
         >
           Clear All

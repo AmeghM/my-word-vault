@@ -61,7 +61,7 @@ function Dash() {
         <div className="bg-green-50 mt-8 flex items-center flex-col justify-center p-8 rounded-lg shadow-md w-full max-w-[100%]">
           <h2 className="text-xl font-semibold mb-3">Add a Word</h2>
           <Link to={"/add"}>
-            <button className="bg-green-400 w-[60ch] px-6 py-2 rounded-lg cursor-pointer shadow hover:bg-green-500 hover:text-white">
+            <button className="bg-green-400 w-full sm:w-[40ch] md:w-[50ch] lg:w-[60ch] px-6 py-2 rounded-lg cursor-pointer shadow hover:bg-green-500 hover:text-white">
               ADD
             </button>
           </Link>
