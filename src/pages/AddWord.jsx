@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function AddWord() {
   const status = [
@@ -21,7 +22,16 @@ function AddWord() {
     e.preventDefault();
 
     if (!word || !definition || !example || !stat) {
-      alert("Please fill the fields");
+      toast.warn("Please fill all required fields!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       return;
     }
 
@@ -38,7 +48,16 @@ function AddWord() {
     setStatus("New");
     setNotes("");
 
-    alert("Word added successfully!");
+    toast.success("Word Added", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
     window.location.href = "/dash";
   };
   const clearInput = () => {

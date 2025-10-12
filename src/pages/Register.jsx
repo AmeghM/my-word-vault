@@ -1,16 +1,28 @@
 import React, { useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 
 function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   const onRegister = () => {
     if (!username || !password || !email) {
-      alert("Please fill all fields");
+      toast.warn("Please fill all fields!!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       return;
     }
     const AllUsers = JSON.parse(localStorage.getItem("users")) || [];
@@ -21,8 +33,14 @@ function Register() {
 
     localStorage.setItem("users", JSON.stringify(AllUsers));
 
-    alert("Registered. Welcome onboard!!");
-    window.location.href = "/login";
+    // alert("Registered. Welcome onboard!!");
+    // window.location.href = "/login";
+    Swal.fire({
+      icon: "success",
+      title: "Register successful",
+      text: "Welcome onboard!!",
+    });
+    setTimeout(() => navigate("/login"), 1000);
   };
   return (
     <>

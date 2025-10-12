@@ -1,14 +1,25 @@
 import React, { useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const onLogin = () => {
     if (!username || !password) {
-      alert("Please fill all the fields");
+      toast.info("Fill all the fields", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       return;
     }
 
@@ -19,10 +30,30 @@ function LoginPage() {
 
     if (userMatch) {
       localStorage.setItem("isLoggedIn", "true");
-      alert("Login successful");
-      window.location.href = "/dash";
+      // alert("Login successful");
+      // window.location.href = "/dash";
+      toast.success("Login successful", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      setTimeout(() => navigate("/dash"), 1000);
     } else {
-      alert("Invalid user");
+      toast.error("Invalid User", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   };
 
